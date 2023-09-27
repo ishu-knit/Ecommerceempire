@@ -19,18 +19,18 @@ const [products, setProducts] = useState([]);
 
   return (
 
-
     <Cartproducts.Provider value={{products , setProducts}} >
 
     <div className="App">
     <Routes>
+
       <Route exact path='/' Component={Frontpage}/>
       <Route path='/login' Component={signin}/>
       <Route path='/signup' Component={Signup}/>
-      <Route path='/cart' Component={Cart}/>
+      <Route path='/cart' Component={Cart}/> 
+
     </Routes>
     </div>
-
     </Cartproducts.Provider>
   );
 }
