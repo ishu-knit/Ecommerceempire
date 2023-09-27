@@ -1,0 +1,8 @@
+bootstrap class 
+sticky-top : -  to make navbar stick at the top 
+
+
+make all the folder inside the src folder 
+
+
+overflow-auto -- > it auto matically see where overflow occure 

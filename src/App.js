@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+import "../src/css/card.css"
+import {  Route, Routes } from 'react-router-dom';
+import signin from "../src/components/Signin"
+import Signup from './components/Signup';
+import Frontpage from './Frontpage';
+import Cart from './components/Cart';
+
+
+import { Cartproducts } from './components/Globalproducts';                 
+import {  useState } from 'react';
+
+
 
 function App() {
+const [products, setProducts] = useState([]);
+
   return (
+
+
+    <Cartproducts.Provider value={{products , setProducts}} >
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Routes>
+      <Route exact path='/' Component={Frontpage}/>
+      <Route path='/login' Component={signin}/>
+      <Route path='/signup' Component={Signup}/>
+      <Route path='/cart' Component={Cart}/>
+    </Routes>
     </div>
+
+    </Cartproducts.Provider>
   );
 }
 
 export default App;
+export {Cartproducts}

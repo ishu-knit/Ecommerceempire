@@ -1,0 +1,10 @@
+.aspect{
+
+
+
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    /* width: min(100%,250px); */
+    /* height: min(100% , 100px); */
+}
