@@ -6,12 +6,17 @@ import img from "../assets/logo.png"
 import { NavLink } from 'react-router-dom';
 import { Cartproducts } from '../App';
 import { useState, useContext } from 'react';
+import { inputfield } from "../Frontpage";
 
-export default function Nav() {
 
-
+function Nav() {
+    
+    const [words, setWords] = useState("");
     const {products,setProducts} = useContext(Cartproducts)
+    const {inp,setInp} = useContext(inputfield);
 
+    
+    
     return (
         <div className='sticky-top'>
             <div className='d-flex 
@@ -20,15 +25,16 @@ export default function Nav() {
                         bg-black 
                         text-white 
                         py-2'>
-
+                
                 <div >
                 <img className='rounded-circle' src={img} alt="logo" width={50} height={50}  />
                 </div>
-                <div style={{background:"#FFBD68" , height:"28px"}}>
 
-                    <input type="text" placeholder='Search for items' />
-                    <AiOutlineSearch size={25} />
-                </div>
+                <div style={{background:"#FFBD68" , height:"28px"}}>
+                    <input type="text" name="info" placeholder='Search for items' value={words} onChange={(e)=>{setWords(e.target.value)}} />
+                    <AiOutlineSearch size={25} onClick={()=>setInp(words)} />
+                </div> 
+                
                 <div  >    
                 <NavLink to="/login">
                 Login 
@@ -46,9 +52,8 @@ export default function Nav() {
                 </div>
 
             </div>
-
-
-
         </div>
     )
 }
+
+export {Nav };

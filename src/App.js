@@ -9,7 +9,8 @@ import Frontpage from './Frontpage';
 import Cart from './components/Cart';
 
 
-import { Cartproducts } from './components/Globalproducts';                 
+
+import { Cartproducts} from './components/Globalproducts';                 
 import {  useState } from 'react';
 
 
@@ -18,6 +19,9 @@ function App() {
 const [products, setProducts] = useState([]);
 
   return (
+
+
+
 
     <Cartproducts.Provider value={{products , setProducts}} >
 
@@ -32,6 +36,7 @@ const [products, setProducts] = useState([]);
     </Routes>
     </div>
     </Cartproducts.Provider>
+
   );
 }
 

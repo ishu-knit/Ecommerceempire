@@ -15,7 +15,7 @@ setProducts((pre)=>{
 })
 
 }
-console.log(products);
+
 
 
 
