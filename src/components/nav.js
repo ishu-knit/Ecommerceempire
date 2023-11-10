@@ -11,11 +11,6 @@ import { useNavigate } from "react-router-dom";
 
 import {logincustomer } from "./Globalproducts";
 
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { app } from "../firebase";
-const auth = getAuth(app);
-// import {auth } from "../../node_modules/firebase"
-
 function Nav() {
   const navigate = useNavigate();
 
@@ -28,7 +23,14 @@ function Nav() {
   // console.log(allarr)
   const navigator = (e) => {
     // to navigate + pass props
-    navigate("/list", { state: { e } });
+
+    if(e=="clothes" || e=="shoe" || e=="phone")
+    {
+      navigate("/list", { state: { e } });
+    }
+    else{
+        alert("category not found")
+    }
   };
 
 const {userid,setUserid} = useContext(logincustomer)

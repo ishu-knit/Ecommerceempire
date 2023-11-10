@@ -31,16 +31,17 @@ const Itemlist = () => {
         <NavLink to="/">back to page   </NavLink>
 
         
-        <div className='border border-3 border-danger' >
+        <div className='border border-3 border-black' >
         {allarr[i].map((e,i)=>
         
-        (  <div key={i} className='d-flex my-5 border border-3 border-primary ' style={{height:"15rem"}}>
+        (  <div key={i} className='d-flex my-5 border border-3 border-black ' style={{height:"10rem" }}>
 
-        <div  >
-        <img className='h-100'  src={e.img} alt="img"  />
-
+        <div>
+        <img className='h-100 border border-3 border-black' style={{width:"10rem"}}  src={e.img} alt="img"  />
         </div>
-        <div className='mx-5'>
+
+        
+        <div className='mx-5 d-flex flex-column justify-content-around align-items-center'>
         <div>{e.company}</div>
         <div>₹{e.price}</div>
         </div>
