@@ -3,6 +3,7 @@ import img from "../assets/logo2.png"
 import { NavLink } from 'react-router-dom';
 import { useState , useContext } from 'react';
 import { Cartproducts } from '../App';
+import { logincustomer} from './Globalproducts';
 
 
 import { getAuth,signOut, signInWithEmailAndPassword } from "firebase/auth";
@@ -32,7 +33,12 @@ const {products,setProducts} = useContext(Cartproducts)
     const {email,password } = user
 
     signInWithEmailAndPassword(auth,email, password)
-    .then(y=>alert("login successfully"))
+    .then(y=>{
+      console.log(y)
+      setUserid(y.user.email)  
+      alert("login successfully")
+    
+    })
     .catch(e=>{
     console.log(e)
       alert("login failed")
@@ -46,7 +52,13 @@ const {products,setProducts} = useContext(Cartproducts)
     signOut(auth)
     setProducts([])
     alert("logout successfully")
+    setUserid("Login")
   }
+
+
+  const {userid,setUserid} = useContext(logincustomer);
+
+  // console.log(userid)
   return (
     <div className='container my-5 w-50'>
       <div className='text-center mb-5'>

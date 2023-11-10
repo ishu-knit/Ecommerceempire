@@ -2,18 +2,13 @@ import React from 'react'
 import { NavLink } from "react-router-dom"
 import { useContext } from 'react';
 import { Cartproducts } from '../App';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { app } from '../firebase';
-
-
-const auth = getAuth(app);
+import { logincustomer } from './Globalproducts';
 
 
 export default function Cart() {
 
 
   const { products, setProducts } = useContext(Cartproducts);
-// console.log(products)
   
   const Inc = (p) => {
     setProducts(prevArray => {
@@ -58,27 +53,21 @@ export default function Cart() {
 
 
   const total=()=>{
-
-    let sum = 0
-    products.map((ele,ind)=>{
-      
-      return (sum += ele.price*ele.qty)
-    })
+    const sum = products.reducer((x,y)=>x+y,0)
     return sum
   }
 
+  const {userid,setUserid}= useContext(logincustomer)
 function Addtocart(e) {
 
    
 
 
-     onAuthStateChanged(auth,(user=>{
 
-        if (user)
-        {
-          // send data to firebase with id 
+    if (userid!=="Login")
+    {
 
-      const res = fetch(
+      fetch(
         "https://form-4ab53-default-rtdb.firebaseio.com/from1.json",
         // `https://form-4ab53-default-rtdb.firebaseio.com/${user.email.slice(0,3)}.json`,
                     {
@@ -88,20 +77,51 @@ function Addtocart(e) {
                 },
                 body: JSON.stringify({
                   products,
-                  user
+                  userid
                 }),
               }
               )
-              
-              
-              alert("send data to database warehouse")
-             console.log("here")
-            
-            }
-    
+              alert("data sent to firebase")
+    }
     else
-    {alert("Login needed to purchase items")}
-}))
+    {
+      
+      alert("Login needed to purchase items")
+    
+    }
+     
+    
+    
+    // onAuthStateChanged(auth,(user=>{
+
+        // if (user)
+        // {
+          // send data to firebase with id 
+
+      // const res = fetch(
+      //   "https://form-4ab53-default-rtdb.firebaseio.com/from1.json",
+      //   // `https://form-4ab53-default-rtdb.firebaseio.com/${user.email.slice(0,3)}.json`,
+      //               {
+      //           method: "POST",
+      //           headers: {
+      //             "Content-Type": "application/json",
+      //           },
+      //           body: JSON.stringify({
+      //             products,
+      //             user
+      //           }),
+      //         }
+      //         )
+              
+              
+//               alert("send data to database warehouse")
+//              console.log("here")
+            
+//             }
+    
+//     else
+//     {alert("Login needed to purchase items")}
+// }))
 
 
 // console.log(x)
@@ -133,7 +153,7 @@ return (
         <div className="container   w-75 my-5 ">
 
           {
-            products.map((ele, ind) => (
+            products.map((ele) => (
               <div>
 
 
@@ -158,7 +178,6 @@ return (
               </div>))}
 
         </div>
-        
         <hr />
 
         <div className='d-flex justify-content-between'>

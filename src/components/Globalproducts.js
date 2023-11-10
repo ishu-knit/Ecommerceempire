@@ -1,4 +1,4 @@
-import React, {  createContext } from 'react';
+import React, {  createContext, useState } from 'react';
 
 import cimg1 from "../assets/items/citem.webp"
 import cimg2 from "../assets/items/citem2.webp"
@@ -77,6 +77,16 @@ const Items = ({children})=>{
 const logincustomer = createContext()
 
 // provide context
+const Logincustomerprovider=({children})=>{
+    const [userid,setUserid] = useState("Login")
+
+    return (
+        <logincustomer.Provider value={{userid,setUserid}}>
+            {children}
+        </logincustomer.Provider>
+    )
 
 
-export  {Cartproducts , allitems ,Items};
+}
+
+export  {Cartproducts , allitems ,Items , Logincustomerprovider,logincustomer};

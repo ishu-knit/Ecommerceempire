@@ -8,6 +8,9 @@ import { Cartproducts } from "../App";
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
+
+import {logincustomer } from "./Globalproducts";
+
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app } from "../firebase";
 const auth = getAuth(app);
@@ -28,20 +31,34 @@ function Nav() {
     navigate("/list", { state: { e } });
   };
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      // for sign in
-      if (user) {
-        setLogin(user.email);
-        console.log("user is sign in ");
-      }
-      // for sign out
-      else {
-        setLogin("Login");
-        console.log("user is not sign in ");
-      }
-    });
-  }, []);
+const {userid,setUserid} = useContext(logincustomer)
+
+
+useEffect(() => {
+
+  if (userid!=="Login")
+  {
+    setLogin(userid)
+  }
+  else{
+    setLogin("Login")
+  }
+  
+}, []);
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, (user) => {
+  //     // for sign in
+  //     if (user) {
+  //       setLogin(user.email);
+  //       console.log("user is sign in ");
+  //     }
+  //     // for sign out
+  //     else {
+  //       setLogin("Login");
+  //       console.log("user is not sign in ");
+  //     }
+  //   });
+  // }, []);
 
 
 

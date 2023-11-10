@@ -59,6 +59,14 @@ export default function Orders() {
 
 
 
+context api 
 
+you only need provider 
+to wrap in app then you dont need it 
+use only globalcontext --> createcontext wali
 
+app.js
 
+<globalprovider>
+child Components
+</globalprovider>

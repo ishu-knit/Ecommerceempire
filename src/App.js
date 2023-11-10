@@ -17,7 +17,7 @@ import Orders from './components/Orders';
 import { Cartproducts, Items } from './components/Globalproducts';
 import Itemlist from './components/Itemlist';
 import { useState } from 'react';
-
+import { Logincustomerprovider } from './components/Globalproducts'
 
 
 
@@ -33,6 +33,8 @@ function App() {
 
   
     <div className="App">
+      <Logincustomerprovider>
+
       <Cartproducts.Provider value={{ products, setProducts }} >
         <Items>
           <Routes>
@@ -45,6 +47,7 @@ function App() {
           </Routes>
         </Items>
       </Cartproducts.Provider>
+      </Logincustomerprovider>
     </div>
   );
 }
