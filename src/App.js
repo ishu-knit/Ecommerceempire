@@ -1,12 +1,10 @@
-import './App.css'
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-
 import "../src/css/card.css"
 import "../src/css/Orders.css"
 import "../src/css/Footer.css"
 import { Route, Routes } from 'react-router-dom';
 
-// compoenents
+// components
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Frontpage from './Frontpage';

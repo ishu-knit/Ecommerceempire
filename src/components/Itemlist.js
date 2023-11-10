@@ -9,11 +9,9 @@ const Itemlist = () => {
 
 
     const location = useLocation()
-    // console.log(location.state.e)
     const name = location.state.e
 
     let i = 2
-    
     if (name==="clothes")
     {i=0}
     else if(name==="shoe")
@@ -35,23 +33,16 @@ const Itemlist = () => {
         <div className='border border-3 border-danger' >
         {allarr[i].map((e,i)=>
         
-        (  <div className='d-flex my-5 border border-3 border-primary ' style={{height:"15rem"}}>
+        (  <div key={i} className='d-flex my-5 border border-3 border-primary ' style={{height:"15rem"}}>
 
         <div  >
         <img className='h-100'  src={e.img} alt="img"  />
 
         </div>
         <div className='mx-5'>
-        <div>
-             {e.company}
+        <div>{e.company}</div>
+        <div>₹{e.price}</div>
         </div>
-        <div>
-        ₹{e.price}
-        </div>
-
-        </div>
-
-
 
         </div>
           )
