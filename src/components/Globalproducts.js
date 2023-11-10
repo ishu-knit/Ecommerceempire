@@ -1,4 +1,4 @@
-import React, { useContext, useState , createContext } from 'react';
+import React, {  createContext } from 'react';
 
 import cimg1 from "../assets/items/citem.webp"
 import cimg2 from "../assets/items/citem2.webp"
@@ -22,11 +22,14 @@ import pitem5 from "../assets/items/pitem5.webp"
 
 
 const Cartproducts= createContext()
-const inputfield= createContext()
 
 
-const allitems  = createContext()
 
+// createContext
+const allitems  = createContext([])
+
+
+// provide value
 const Items = ({children})=>{
 
     const allarr = [
@@ -38,6 +41,7 @@ const Items = ({children})=>{
             { id: 3, price: 599, img: cimg3, company: "Olivia", qty: 1 },
             { id: 4, price: 423, img: cimg4, company: "Octave", qty: 1 },
             { id: 5, price: 909, img: cimg5, company: "Zara", qty: 1 },
+            
         ],
 
         // shoe
@@ -68,4 +72,11 @@ const Items = ({children})=>{
 };
 
 
-export  {Cartproducts , inputfield , allitems ,Items};
+
+// create context
+const logincustomer = createContext()
+
+// provide context
+
+
+export  {Cartproducts , allitems ,Items};

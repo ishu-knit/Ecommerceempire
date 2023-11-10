@@ -6,3 +6,59 @@ make all the folder inside the src folder
 
 
 overflow-auto -- > it auto matically see where overflow occure 
+
+
+
+firebase login 
+
+technical thapa 
+
+
+login 
+  const [user, setUser] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+  });
+
+
+send data 
+    const res = await fetch(
+      "https://form-4ab53-default-rtdb.firebaseio.com/from.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          email,
+          password,
+        }),
+      }
+    );
+
+
+
+pdf generate
+
+
+use react-to-pdf library
+
+
+export default function Orders() {
+
+    return (
+    <div>
+      <Component/>
+    </div>
+  )
+}
+
+
+
+
+
+

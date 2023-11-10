@@ -1,33 +1,24 @@
-import {React , useState}from 'react';
-import {Nav } from './components/nav';
+import { React} from 'react';
+import { Nav } from './components/nav';
 import IndividualIntervalsExample from "../src/components/Banner.js"
 import Row from './components/row';
-import { inputfield , Items  } from './components/Globalproducts';
 
+import Foter from './components/Foter';
 
 
 
 const Frontpage = () => {
 
-    const [inp, setInp] = useState("");
-
-
-
-    return (
-        <div>
-        <Items>
-
-        <inputfield.Provider value={{inp,setInp}}>
-          <Nav /> 
-          <IndividualIntervalsExample/> 
-          <Row />   
-        </inputfield.Provider>  
-
-        </Items>
-        </div>
-    );
+  return (
+    <div>  
+        <Nav />
+        <IndividualIntervalsExample />
+        <Row/>
+        <Foter/>
+    </div>
+  );
+  
 }
 
 
 export default Frontpage;
-export {inputfield}
