@@ -11,6 +11,7 @@ const Itemlist = () => {
     const location = useLocation()
     const name = location.state.e
 
+    
     let i = 2
     if (name==="clothes")
     {i=0}
