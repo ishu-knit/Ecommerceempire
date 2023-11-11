@@ -22,7 +22,7 @@ export default function Orders() {
         <h1>please login first</h1>
       ) : (
         <div >
-            <Component  iid={userid} total={total}   />
+            <Component  iid={userid} total={total}/>
         </div>
       )}
     </div>
@@ -30,12 +30,14 @@ export default function Orders() {
 }
 
 const Component = (props) => {
-  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
 
+  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
   const {products} = useContext(Cartproducts)
 
 
   return (
+
+
     <div>
       <div ref={targetRef}>
         <div
@@ -72,6 +74,7 @@ const Component = (props) => {
         </div>
       </div>
       <button onClick={() => toPDF()}>Download PDF</button>
+
     </div>
   );
 };

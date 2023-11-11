@@ -40,7 +40,7 @@ createUserWithEmailAndPassword(auth, email, password)
   }
   return (
     <div>
-      <NavLink to="/">back to page</NavLink>
+      <NavLink to="/">«Homepage</NavLink>
 
       <div className="container  my-5 w-50" style={{ minHeight: "10rem" }}>
         <div

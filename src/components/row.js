@@ -38,7 +38,7 @@ const Row = () => {
           ))}
         </div>
   
-        <h2>(Electronic & Phone)</h2>
+        <h2>Electronic & Phone</h2>
         <div id='page1' className='d-flex justify-content-between overflow-auto'>
           {allarr[2].map((ele) => (
             <Cards

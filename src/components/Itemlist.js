@@ -2,14 +2,15 @@ import {React }from 'react';
 import {allitems} from './Globalproducts';
 import {useContext} from 'react';
 import {useLocation , NavLink} from "react-router-dom"
-
-
+import { Cartproducts } from '../App';
+import Cards from './cards';
 const Itemlist = () => {
 
 
 
     const location = useLocation()
     const name = location.state.e
+
 
     
     let i = 2
@@ -24,35 +25,34 @@ const Itemlist = () => {
     
     const {allarr} = useContext(allitems)
    
+
+
+
+
+    const {products,setProducts} = useContext(Cartproducts)
+
+
+
     return (
+      <div>
 
-
-        <div >
-        <NavLink to="/">back to page   </NavLink>
-
-        
-        <div className='border border-3 border-black' >
-        {allarr[i].map((e,i)=>
-        
-        (  <div key={i} className='d-flex my-5 border border-3 border-black ' style={{height:"10rem" }}>
-
-        <div>
-        <img className='h-100 border border-3 border-black' style={{width:"10rem"}}  src={e.img} alt="img"  />
-        </div>
-
-        
-        <div className='mx-5 d-flex flex-column justify-content-around align-items-center'>
-        <div>{e.company}</div>
-        <div>₹{e.price}</div>
-        </div>
-
-        </div>
-          )
-        
-        )}
-        </div>
-        </div>
-    );
+      <div> <NavLink to="/">«Homepage</NavLink></div>
+<div className='d-flex  flex-wrap overflow-auto my-5 mx-5'>
+          {allarr[i].map((ele) => (
+            <Cards
+            
+            className="m-4"
+            key={ele.id}
+            id={ele.id}
+            price={ele.price}
+            img={ele.img}
+            company={ele.company}
+            qty={ele.qty}
+            />
+            ))}
+      </div>
+            </div>
+    )
 }
 
 export default Itemlist;

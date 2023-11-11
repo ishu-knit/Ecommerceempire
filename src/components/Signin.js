@@ -88,7 +88,7 @@ const {products,setProducts} = useContext(Cartproducts)
         </div>
 
         <NavLink to="/">
-          back to page
+        «Homepage
         </NavLink><br></br>
         <div className='btn btn-outline-danger my-2' onClick={logout}>signout</div>
       </form>

@@ -138,7 +138,7 @@ return (
 
     <div>
 
-<NavLink to="/">  Homepage </NavLink>
+<NavLink to="/">  «Homepage </NavLink>
 
 
    { (products.length===0)?(
