@@ -70,3 +70,11 @@ app.js
 <globalprovider>
 child Components
 </globalprovider>
+
+
+
+
+we canot use for loop stattement inside return () because 
+The error is occurring because you're trying to use a JavaScript for loop directly inside your JSX code.
+ JSX doesn't support regular JavaScript loops like for or while. Instead, you should use JavaScript's array 
+ methods like map(), filter(), reduce(), etc.

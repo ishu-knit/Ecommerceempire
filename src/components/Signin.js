@@ -55,11 +55,17 @@ const {products,setProducts} = useContext(Cartproducts)
     setUserid("Login")
   }
 
-
+  
   const {userid,setUserid} = useContext(logincustomer);
 
   // console.log(userid)
   return (
+
+    <div>
+      <div>
+      <NavLink to="/">«Homepage</NavLink><br></br>
+      </div>
+
     <div className='container my-5 w-50'>
       <div className='text-center mb-5'>
         <img src={img} alt="logo" width={300} height={100} />
@@ -87,11 +93,9 @@ const {products,setProducts} = useContext(Cartproducts)
           </NavLink>
         </div>
 
-        <NavLink to="/">
-        «Homepage
-        </NavLink><br></br>
         <div className='btn btn-outline-danger my-2' onClick={logout}>signout</div>
       </form>
+    </div>
     </div>
   );
 }

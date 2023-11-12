@@ -20,6 +20,8 @@ const Itemlist = () => {
     {i=1}
     else if (name==="phone")
     {i=2}
+    else if (name==="laptops")
+    {i=3}
     else
     {alert("category not found")}
     

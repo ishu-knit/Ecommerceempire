@@ -18,7 +18,11 @@ import pitem3 from "../assets/items/pitem3.webp"
 import pitem4 from "../assets/items/pitem4.webp"
 import pitem5 from "../assets/items/pitem5.webp"
 
-
+import pcitem1 from "../assets/items/pcitem1.webp"
+import pcitem2 from "../assets/items/pcitem2.webp"
+import pcitem3 from "../assets/items/pcitem3.webp"
+import pcitem4 from "../assets/items/pcitem4.webp"
+import pcitem5 from "../assets/items/pcitem5.webp"
 
 
 const Cartproducts= createContext()
@@ -59,7 +63,15 @@ const Items = ({children})=>{
             { id: 13, price: 2000, img: pitem3, company: "Mi 11X 5G", qty: 1 },
             { id: 14, price: 2000, img: pitem4, company: "Oppo A78", qty: 1 },
             { id: 15, price: 750, img: pitem5, company: "Galaxy A14", qty: 1 }
-        ]
+        ],
+        // laptops+earphoe
+        [
+            { id: 16, price: 50000, img: pcitem1, company: "Dull", qty: 1 },
+            { id: 17, price: 60000, img: pcitem2, company: "Hp", qty: 1 },
+            { id: 18, price: 40000, img: pcitem3, company: "Accer", qty: 1 },
+            { id: 19, price: 100000, img: pcitem4, company: "Msi", qty: 1 },
+            { id: 20, price: 75000, img: pcitem5, company: "Aserr", qty: 1 }
+        ]  
 
 
     ]

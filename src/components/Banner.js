@@ -14,7 +14,7 @@ function IndividualIntervalsExample() {
     <Carousel>
       {images.map((image, index) => (
         <Carousel.Item key={index} interval={3000}>
-          <img src={image} alt="adf" className="w-100" height={250} />
+          <img src={image} alt="adf" className="w-100  " height={300} />
         </Carousel.Item>
       ))}
     </Carousel>

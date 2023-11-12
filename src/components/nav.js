@@ -2,7 +2,10 @@ import { React } from "react";
 
 import { AiOutlineSearch } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import img from "../assets/logo.png";
+import { BiUserCircle } from "react-icons/bi";
+import { BiPurchaseTagAlt } from "react-icons/bi";
+import img from "../assets/elogo.png";
+
 import { NavLink } from "react-router-dom";
 import { Cartproducts } from "../App";
 import { useEffect, useState, useContext } from "react";
@@ -24,7 +27,7 @@ function Nav() {
   const navigator = (e) => {
     // to navigate + pass props
 
-    if(e=="clothes" || e=="shoe" || e=="phone")
+    if(e=="clothes" || e=="shoe" || e=="phone"|| e=="laptops")
     {
       navigate("/list", { state: { e } });
     }
@@ -87,6 +90,7 @@ useEffect(() => {
 
         <div style={{ background: "#FFBD68", height: "28px" }}>
           <input
+          style={{backgroundColor:"black" , color:"white" , outline:"none" , border:"none" }}
             type="text"
             name="info"
             placeholder="Search for items"
@@ -99,9 +103,15 @@ useEffect(() => {
         </div>
 
         <div>
-          <NavLink to="/login">{login}</NavLink>
+            <BiUserCircle size={25}/>
+          <NavLink to="/login">
+            
+            {login}
+            
+            </NavLink>
         </div>
         <div>
+           <BiPurchaseTagAlt size={24} /> 
           <NavLink to="/orders">
           Returns & Orders
           </NavLink>
@@ -109,8 +119,8 @@ useEffect(() => {
           </div>
         <div className="mx-2">
           <NavLink className="mx-2" to="/cart">
+          <AiOutlineShoppingCart size={25} color="white" />
             Cart
-            <AiOutlineShoppingCart size={25} color="gold" />
           </NavLink>
           {products.length}
         </div>
