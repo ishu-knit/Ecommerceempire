@@ -7,13 +7,7 @@ const Row = () => {
     const { allarr } = useContext(allitems);
   
 
-
-
-
-
-
     return (
-
 
       <div className='border border-4'>
         <h2 className='fon my-3' >Clothes</h2>

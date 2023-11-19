@@ -5,6 +5,8 @@ import { Cartproducts } from '../App';
 import { logincustomer } from './Globalproducts';
 
 
+import "./Cart.css"
+
 export default function Cart() {
 
 
@@ -53,8 +55,19 @@ export default function Cart() {
 
 
   const total=()=>{
-    const sum = products.reducer((x,y)=>x+y,0)
-    return sum
+
+    if (products.length!==0){
+
+
+
+
+      let sum = 0
+       for (let i = 0; i < products.length; i++) {
+         sum = sum +  products[i].price * products[i].qty;
+       }
+      return sum
+    }
+  
   }
 
   const {userid,setUserid}= useContext(logincustomer)
@@ -69,12 +82,11 @@ function Addtocart(e) {
 
       fetch(
         "https://form-4ab53-default-rtdb.firebaseio.com/from1.json",
-        // `https://form-4ab53-default-rtdb.firebaseio.com/${user.email.slice(0,3)}.json`,
                     {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
-                },
+              },
                 body: JSON.stringify({
                   products,
                   userid
@@ -148,7 +160,7 @@ return (
     ):(
       <div>
 
-      <div className='container border border-4 border-black w-50 my-5'>
+      <div className='container cartbox border border-4 border-black w-50 my-5'>
         <h1 className='text-center'>My cart</h1>
         <div className="container   w-75 my-5 ">
 

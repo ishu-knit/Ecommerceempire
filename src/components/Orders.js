@@ -2,7 +2,7 @@ import React , {useContext} from "react";
 import { usePDF } from "react-to-pdf";
 import { Cartproducts } from "../App"; 
 import { logincustomer } from "./Globalproducts";
-
+import Location from "./loc";
 
 
 
@@ -41,7 +41,7 @@ const Component = (props) => {
     <div>
       <div ref={targetRef}>
         <div
-          className="container border border-3 border-danger d-flex flex-column justify-content-center my-5"
+          className="container border border-3 border-black d-flex flex-column justify-content-center my-5"
           style={{ height: "80vh", width: "50%" }}>
 
 
@@ -57,7 +57,7 @@ const Component = (props) => {
               {products.map((e, i) => {
                 return (
                   <tr key={i}>
-                    <td>products {i}</td>
+                    <td>{i+1} products </td>
                     <td>{e.company}</td>
                     <td>₹{e.price}</td>
                   </tr>
@@ -68,6 +68,15 @@ const Component = (props) => {
                 <td>Total Amount</td>
                 <td></td>
                 <td>₹{props.total}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <Location />
+                </td>
               </tr>
             </tbody>
           </table>

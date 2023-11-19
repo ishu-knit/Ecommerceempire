@@ -15,7 +15,7 @@ const Frontpage = () => {
         <Nav />
         <IndividualIntervalsExample />
         <Row/>
-        {/* <Location/> recive too many response at that time  */}
+        {/* <Location/> */}
         <Foter/>
     </div>
   );

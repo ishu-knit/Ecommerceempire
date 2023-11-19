@@ -1,0 +1,35 @@
+[debug] [2023-11-19T11:47:14.483Z] ----------------------------------------------------------------------
+[debug] [2023-11-19T11:47:14.485Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ishuk\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2023-11-19T11:47:14.486Z] CLI Version:   12.8.1
+[debug] [2023-11-19T11:47:14.486Z] Platform:      win32
+[debug] [2023-11-19T11:47:14.487Z] Node Version:  v18.17.1
+[debug] [2023-11-19T11:47:14.488Z] Time:          Sun Nov 19 2023 17:17:14 GMT+0530 (India Standard Time)
+[debug] [2023-11-19T11:47:14.488Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-19T11:47:14.680Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-19T11:47:14.680Z] > authorizing via signed-in user (ishukatiyar.26@gmail.com)
+[debug] [2023-11-19T11:47:14.681Z] [iam] checking project ecommer-empire for permissions ["firebase.projects.get"]
+[debug] [2023-11-19T11:47:14.683Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommer-empire:testIamPermissions [none]
+[debug] [2023-11-19T11:47:14.683Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommer-empire:testIamPermissions x-goog-quota-user=projects/ecommer-empire
+[debug] [2023-11-19T11:47:14.683Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommer-empire:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-11-19T11:47:16.791Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommer-empire:testIamPermissions 200
+[debug] [2023-11-19T11:47:16.792Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommer-empire:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-11-19T11:47:16.796Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommer-empire [none]
+[debug] [2023-11-19T11:47:17.692Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommer-empire 200
+[debug] [2023-11-19T11:47:17.692Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommer-empire {"projectId":"ecommer-empire","projectNumber":"91731686842","displayName":"Ecommer-empire","name":"projects/ecommer-empire","resources":{"hostingSite":"ecommer-empire"},"state":"ACTIVE","etag":"1_0c59a10d-c695-44a3-874a-aa743e0f902e"}
+[info] 
+[info] === Serving from 'C:\Users\ishuk\Desktop\visual studio file\web_dev\mini_projects_frontend\ecommerceempire'...
+[info] 
+[debug] [2023-11-19T11:47:17.710Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/ecommer-empire/sites 
+[debug] [2023-11-19T11:47:19.234Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/ecommer-empire/sites 200
+[debug] [2023-11-19T11:47:19.234Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/ecommer-empire/sites {"sites":[{"name":"projects/ecommer-empire/sites/ecommer-empire","defaultUrl":"https://ecommer-empire.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-11-19T11:47:19.235Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommer-empire/webApps/-/config [none]
+[debug] [2023-11-19T11:47:20.872Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommer-empire/webApps/-/config 200
+[debug] [2023-11-19T11:47:20.873Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommer-empire/webApps/-/config {"projectId":"ecommer-empire","appId":"1:91731686842:web:959e5c3bb94e9a35ea1983","storageBucket":"ecommer-empire.appspot.com","apiKey":"AIzaSyDxU2afmsZ1Frtsa7smpMf8V6vP_MgiSyc","authDomain":"ecommer-empire.firebaseapp.com","messagingSenderId":"91731686842"}
+[debug] [2023-11-19T11:47:20.895Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommer-empire [none]
+[debug] [2023-11-19T11:47:21.482Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommer-empire 200
+[debug] [2023-11-19T11:47:21.482Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommer-empire {"projectId":"ecommer-empire","projectNumber":"91731686842","displayName":"Ecommer-empire","name":"projects/ecommer-empire","resources":{"hostingSite":"ecommer-empire"},"state":"ACTIVE","etag":"1_0c59a10d-c695-44a3-874a-aa743e0f902e"}
+[info] i  hosting[ecommer-empire]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[ecommer-empire]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: ::1 - - [19/Nov/2023:11:51:02 +0000] "GET /static/js/main.a35ed896.js.map HTTP/1.1" 200 554 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [19/Nov/2023:11:51:02 +0000] \"GET /static/js/main.a35ed896.js.map HTTP/1.1\" 200 554 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [19/Nov/2023:11:51:02 +0000] "GET /static/css/main.49ebcc64.css.map HTTP/1.1" 200 554 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [19/Nov/2023:11:51:02 +0000] \"GET /static/css/main.49ebcc64.css.map HTTP/1.1\" 200 554 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36\""}}

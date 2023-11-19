@@ -6,6 +6,11 @@ const Location = () => {
     longitude: null,
   });
 
+
+  const [area, setArea] = useState({
+    state: "",
+    city: "",
+  });
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -14,23 +19,52 @@ const Location = () => {
           longitude: position.coords.longitude,
         });
       });
-    } else {
+    
+    
+    
+    
+    
+    
+    // end of if statement 
+    } 
+    
+    
+    
+    
+    
+    
+    else {
       alert("Geolocation is not supported by this browser.");
     }
+    
   }, []);
+    
+
+  useEffect(() => {
 
 
-  const res=fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=28.5735&lon=77.3208&appid=877c1f7d0938d6c1e3c2ff50f4b898d5"`)
-  .then(x=>x.json())
-  .then(y=>console.log(y))
-  .catch(z=>{console.log("error",z)})
+    
+    const res=fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${location.latitude}&lon=${location.longitude}&appid=877c1f7d0938d6c1e3c2ff50f4b898d5`)
+    .then(x=>x.json())
+    .then(y=>{
+      
+      console.log(y)
+      setArea({
+        state: y[0].state,
+        city: y[0].name
+      })
+    })
+    .catch(z=>{console.log("error",z)})
+    
+  }, [location.latitude, location.longitude]);
+
+
 
   return (
-    <div>
-      <h2>Your Current Location</h2>
-      <p>Latitude: {location.latitude}</p>
-      <p>Longitude: {location.longitude}</p>
-      <p></p>
+    <div className='my-5'>
+      <h3>Purchased from</h3>
+      <div>City:- {area.city}</div>
+      <div>State:- {area.state}</div>
     </div>
   );
 };
